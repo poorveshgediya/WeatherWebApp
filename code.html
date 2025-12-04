@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Weather Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#111418] dark:text-white">
+<div class="relative flex min-h-screen w-full flex-col group/design-root">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-10 lg:px-20 xl:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] dark:border-b-background-dark/50 px-6 sm:px-10 py-4">
+<div class="flex items-center gap-8 w-full">
+<div class="flex items-center gap-3 text-[#111418] dark:text-white">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined !text-3xl">partly_cloudy_day</span>
+</div>
+<h1 class="text-[#111418] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">Weather Details</h1>
+</div>
+<label class="flex flex-col min-w-40 !h-10 max-w-sm ml-auto w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#617589] dark:text-gray-400 flex bg-[#f0f2f4] dark:bg-background-dark/80 items-center justify-center pl-4 rounded-l-lg">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#f0f2f4] dark:bg-background-dark/80 focus:border-none h-full placeholder:text-[#617589] dark:placeholder:text-gray-400 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Enter City Name" value="London"/>
+</div>
+</label>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f0f2f4] dark:bg-background-dark/80 text-[#111418] dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-3">
+<span class="material-symbols-outlined !text-xl">refresh</span>
+</button>
+</div>
+</header>
+<main class="flex-1 p-4 sm:p-6 md:p-8">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Main Weather Card -->
+<div class="lg:col-span-2">
+<div class="bg-cover bg-center flex flex-col items-stretch justify-end rounded-xl pt-[132px] shadow-[0_0_4px_rgba(0,0,0,0.1)]" data-alt="Stylized image of a city skyline with clouds" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDUfSTTyKYbAY_Bmpx2Fjo_jnAZraDKdS9KPtkTwBpdzglVjTetNPrPMfIbskG149iXuTdtfKpw7geJpr92vzBcWa7D2RoQpafihBJIJAB4Vm0TMCDc3lnNMdB1QbZozlZ2c9nhvHUZ-jc_LV1C-WqBwGE1NAhpQ5c-ECV7iOYP3FgiAiG_ne8g74UKXesHwXBoUkaN9C8vqdaS2S78W6rcCg-xbJiRyNcSrbYQlxuEzG0JoD_mlyk38cahbHMgU1EtKu3Fb2XlDg4");'>
+<div class="flex w-full items-end justify-between gap-4 p-6">
+<div class="flex max-w-[440px] flex-1 flex-col gap-1">
+<p class="text-white text-base font-medium leading-normal">London, UK</p>
+<p class="text-white tracking-light text-5xl font-bold leading-tight max-w-[440px]">21°C</p>
+<p class="text-white text-lg font-medium leading-normal">Partly Cloudy</p>
+</div>
+<div class="text-white">
+<span class="material-symbols-outlined !text-8xl">partly_cloudy_day</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Weather Details List -->
+<div class="bg-white dark:bg-background-dark/50 p-4 sm:p-6 rounded-xl shadow-[0_0_4px_rgba(0,0,0,0.1)]">
+<h3 class="text-lg font-bold text-[#111418] dark:text-white mb-4">Current Details</h3>
+<div class="grid grid-cols-2 gap-x-2">
+<div class="flex flex-col gap-1 border-t border-solid border-t-[#dbe0e6] dark:border-t-gray-700 py-4 pr-2">
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Feels Like</p>
+<p class="text-[#111418] dark:text-white text-sm font-medium leading-normal">19°C</p>
+</div>
+<div class="flex flex-col gap-1 border-t border-solid border-t-[#dbe0e6] dark:border-t-gray-700 py-4 pl-2">
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Humidity</p>
+<p class="text-[#111418] dark:text-white text-sm font-medium leading-normal">75%</p>
+</div>
+<div class="flex flex-col gap-1 border-t border-solid border-t-[#dbe0e6] dark:border-t-gray-700 py-4 pr-2">
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Wind Speed</p>
+<p class="text-[#111418] dark:text-white text-sm font-medium leading-normal">12 km/h</p>
+</div>
+<div class="flex flex-col gap-1 border-t border-solid border-t-[#dbe0e6] dark:border-t-gray-700 py-4 pl-2">
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Pressure</p>
+<p class="text-[#111418] dark:text-white text-sm font-medium leading-normal">1012 hPa</p>
+</div>
+<div class="flex flex-col gap-1 border-t border-solid border-t-[#dbe0e6] dark:border-t-gray-700 py-4 pr-2">
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Visibility</p>
+<p class="text-[#111418] dark:text-white text-sm font-medium leading-normal">10 km</p>
+</div>
+<div class="flex flex-col gap-1 border-t border-solid border-t-[#dbe0e6] dark:border-t-gray-700 py-4 pl-2">
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">UV Index</p>
+<p class="text-[#111418] dark:text-white text-sm font-medium leading-normal">3 (Moderate)</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="flex flex-col gap-6 px-5 py-10 text-center">
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Last Updated: 10:30 AM</p>
+<p class="text-[#617589] dark:text-gray-400 text-base font-normal leading-normal">Powered by Weather API</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</body></html>
