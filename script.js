@@ -21,16 +21,6 @@ searchbtn.addEventListener("click", function () {
     )
       .then((res) => res.json())
       .then((data) => {
-        cityname.innerHTML = data.name + ", " + data.sys.country;
-        temp.innerHTML = Math.round(data.main.temp - 273.15) + "°C";
-        condition.innerHTML = data.weather[0].main;
-        windspeed.innerHTML = data.wind.speed + " m/s";
-        FeelsLike.innerHTML = Math.round(data.main.feels_like - 273.15) + "°C";
-        Humidity.innerHTML = data.main.humidity + " %";
-        Pressure.innerHTML = data.main.pressure + " hPa";
-        Visibility.innerHTML = data.visibility / 1000 + " km";
-        UVIndex.innerHTML = "N/A";
-
         if (data.weather[0].main == "Clear") {
           weatherimg.src = "ClearWeather.jpeg";
         }
@@ -46,6 +36,16 @@ searchbtn.addEventListener("click", function () {
         else if (data.weather[0].main == "Mist") {
           weatherimg.src = "MistWeather.jpeg";
         }
+        cityname.innerHTML = data.name + ", " + data.sys.country;
+        temp.innerHTML = Math.round(data.main.temp - 273.15) + "°C";
+        condition.innerHTML = data.weather[0].main;
+        windspeed.innerHTML = data.wind.speed + " m/s";
+        FeelsLike.innerHTML = Math.round(data.main.feels_like - 273.15) + "°C";
+        Humidity.innerHTML = data.main.humidity + " %";
+        Pressure.innerHTML = data.main.pressure + " hPa";
+        Visibility.innerHTML = data.visibility / 1000 + " km";
+        UVIndex.innerHTML = "N/A";
+
       });
   } catch (err) {
     alert("City not found");
